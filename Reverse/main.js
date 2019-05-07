@@ -1,3 +1,5 @@
+let str = prompt("enter word")
+
 function reverse(str){
  if(str === ""){
   return str
