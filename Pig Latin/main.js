@@ -1,8 +1,19 @@
-str = "banana"
-const vowels = ['a', 'e', 'i', 'o', 'u']
+function pigLatin(string) {
+  let stringWord = string.toLowerCase().split("");
+  let pigLatinString = [];
 
-let pigLatin = (string) => {
-  if (vowels.includes(string[0])) {
-    console.log('This starts with a consonant')
+  let i = 0;
+
+  while (i < stringWord.length) {
+    letters = stringWord[i].split("");
+    letters.push(letters.splice(0,1) + "ay");
+    newWordLatin = letters.join("");
+    if (i == 0) {
+      newWordLatin = newWordLatin.slice(0,1) + newWordLatin.slice(1);
+    }
+    pigLatinString.push(newWordLatin);
+    i++
   }
+  pigLatinString = pigLatinString.join("");
+  return pigLatinString;
 }
